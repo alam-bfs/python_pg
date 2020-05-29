@@ -5,7 +5,7 @@ from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.support.wait import WebDriverWait
 
 
-class FbAddRemoveItemMp(unittest.TestCase):
+class FbLogin(unittest.TestCase):
 
     USERNAME = "Unknown"
     PASSWORD = "Unknown"
@@ -33,6 +33,6 @@ class FbAddRemoveItemMp(unittest.TestCase):
 
 if __name__ == "__main__":
     if len(sys.argv) > 1:
-        FbAddRemoveItemMp.PASSWORD = sys.argv.pop()
-        FbAddRemoveItemMp.USERNAME = sys.argv.pop()
+        FbLogin.PASSWORD = sys.argv.pop()
+        FbLogin.USERNAME = sys.argv.pop()
     unittest.main()
