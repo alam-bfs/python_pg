@@ -1,5 +1,6 @@
 import sys
 import unittest
+from time import sleep
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.chrome.options import Options
@@ -31,6 +32,15 @@ class FbAddRemoveItemMp(unittest.TestCase):
         # Go to Market Place
         market_place_elm = self.wait.until(EC.element_to_be_clickable((By.LINK_TEXT, 'Marketplace')))
         market_place_elm.click()
+
+        # add items and delete items
+        self.wait.until(EC.element_to_be_clickable((By.CSS_SELECTOR, '._54qk'))).click()
+        self.wait.until(EC.element_to_be_clickable((By.LINK_TEXT, 'Item for Sale'))).click()
+        self.wait.until(EC.element_to_be_clickable((By.CSS_SELECTOR, '._2t_f ._58al'))).click()
+        self.wait.until(EC.element_to_be_clickable((By.CSS_SELECTOR, '._2t_f ._58al'))).send_keys("lamps for sell")
+        self.wait.until(EC.element_to_be_clickable((By.CSS_SELECTOR, '._1mf7._4jy0._4jy3._517h._51sy._42ft'))).click()
+        self.wait.until(EC.element_to_be_clickable((By.CSS_SELECTOR, '._4jy0._4jy3._517h._51sy._42ft'))).click()
+        sleep(2)
 
         # Logout
         login_anchor_elm = self.wait.until(EC.element_to_be_clickable((By.ID, 'pageLoginAnchor')))
