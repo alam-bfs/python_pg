@@ -8,6 +8,20 @@ from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 
 
+class ElementHasSelector(object):
+
+    def __init__(self, locator, css_class):
+        self.locator = locator
+        self.css_class = css_class
+
+    def __call__(self, driver):
+        element = driver.find_element(*self.locator)
+        if self.css_class in element.getAttribute("class"):
+            return element
+        else:
+            return False
+
+
 class FbAddRemoveItemMp(unittest.TestCase):
 
     USERNAME = "Unknown"
