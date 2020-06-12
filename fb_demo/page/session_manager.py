@@ -1,0 +1,2 @@
+class SessionManager(object):
+    pass
