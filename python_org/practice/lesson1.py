@@ -1,36 +1,15 @@
-import sys
-from datetime import date, datetime
+import datetime
+
+name = str(input('Enter your name: '))
+age = int(input('Enter your age: '))
+display_msg = int(input('Number of times you want to see the messages: '))
 
 
-# Python version
-def python_version():
-    print(sys.version)
+if age <= 100:
+    age_100 = 100 - age
+    now = datetime.datetime.now()
+    age_100_year = now.year + age_100
+    for i in range(display_msg):
+        print('{} will be 100 in {} years'.format(name, age_100))
+    print('In {} you will be 100 years old.'.format(age_100_year))
 
-
-# display current date and time
-def get_curr_datetime():
-    print(date.today(), datetime.now().strftime("%H:%M:%S"))
-
-
-# display file extension
-def get_file_extension():
-    print("abc.txt".split(".")[-1])
-
-
-# display first and last color of string
-def get_first_last_string():
-    item_list = ["car", "house", "business", "family"]
-    print(item_list[0], item_list[-1])
-
-
-def reverse_string():
-    print("car"[::-1])
-    print(''.join(reversed("google")))
-
-
-if __name__ == "__main__":
-    python_version()
-    get_curr_datetime()
-    get_file_extension()
-    get_first_last_string()
-    reverse_string()
