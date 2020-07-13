@@ -1,0 +1,12 @@
+{
+  "fiction": {
+    "book_title": "Diary of Wimpy Kids",
+    "author": "John Adam",
+    "isbn": "1-1234-SB-9991"
+  },
+  "none-fiction": {
+    "book_title": "None Fiction Book",
+    "author": "Williams",
+    "isbn": "1-1234-SB-9992"
+  }
+}

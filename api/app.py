@@ -1,3 +1,5 @@
+import json
+
 from flask import Flask
 from flask_restful import Resource, Api, reqparse
 
@@ -9,6 +11,14 @@ db = dict()
 
 # Create the API
 api = Api(app)
+
+
+class AddBooks(Resource):
+    def post(self):
+        with open('./data/books.json') as f:
+            books = json.load(f)
+        db['book'] = books
+        return {'message': 'Books added'}, 201
 
 
 class FriendList(Resource):
@@ -60,3 +70,4 @@ class Friend(Resource):
 
 api.add_resource(FriendList, '/friends')
 api.add_resource(Friend, '/friend/<string:identifier>')
+api.add_resource(AddBooks, '/book')

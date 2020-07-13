@@ -1,0 +1,25 @@
+{
+  "friend": [
+    {
+      "name": "Peter Jamil",
+      "phone": "917-111-1212",
+      "occupation": [
+        "Real Estate Broker",
+        "Independent Contractor"
+      ],
+      "has_license": true,
+      "email": "peter@email.com"
+    },
+    {
+      "name": "Evan",
+      "phone": "917-111-1212",
+      "occupation": [
+        "Real Estate Broker",
+        "Independent Contractor",
+        "Uber Driver"
+      ],
+      "has_license": true,
+      "email": "evan@email.com"
+    }
+  ]
+}
