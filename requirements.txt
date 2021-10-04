@@ -1,7 +1,7 @@
 Flask==1.1.2
 Flask-RESTful==0.3.8
 requests~=2.24.0
-Appium-Python-Client~=1.0.1
+Appium-Python-Client~=1.0.2
 selenium~=3.141.0
 pexpect~=4.8.0
 mock~=4.0.2

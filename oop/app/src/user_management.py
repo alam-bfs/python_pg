@@ -1,3 +1,4 @@
+from person import Person
 
 
 class Book:
@@ -30,14 +31,14 @@ class MyLibrary:
         self.books = []
         self.people = []
 
-    def add_book(self, book):
-        self.books.append(book)
+    def add_book(self, books):
+        self.books.append(books)
 
     def add_person(self, person):
         self.people.append(person)
 
-    def remove_book(self, book):
-        self.books.remove(book)
+    def remove_book(self, books):
+        self.books.remove(books)
 
     def remove_person(self, person):
         self.people.remove(person)
@@ -58,22 +59,22 @@ class MyLibrary:
         pass
 
     @staticmethod
-    def check_out_book(book, person):
-        if book.get_person() is None:
-            book.set_person(person)
+    def check_out_book(books, person):
+        if books.get_person() is None:
+            books.set_person(person)
             return True
         else:
             return False
 
     @staticmethod
-    def check_in_book(book):
-        if book.get_person is not None:
-            book.set_person(None)
+    def check_in_book(books):
+        if books.get_person is not None:
+            books.set_person(None)
             return True
         else:
             return False
 
-    def get_books_for_person(self, person):
+    def _get_books_for_person(self, person):
         result = []
 
         for aBook in self.get_books():
@@ -84,8 +85,8 @@ class MyLibrary:
 
 if __name__ == '__main__':
     john = Person('John')
-    # book = Book('Harry Potters', 'Smith')
-    # book.set_person(john)
-    #
-    # print(john.get_maximum_books())
+    book = Book('Harry Potters', 'Smith')
+    book.set_person(john)
+
+    print(john.get_maximum_books())
 
